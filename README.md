@@ -97,10 +97,3 @@ All C99 with no dependencies. They build for desktop, Arduino and WebAssembly.
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-ff7978?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/visrealm)
 
 <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/divider.svg" width="100%" alt="">
-
-<sub>
-The 15 colours above are the TMS9918A palette, taken from
-<a href="https://github.com/visrealm/vrEmuTms9918/blob/main/src/vrEmuTms9918Util.c">vrEmuTms9918Util.c</a>.
-The banner and stats panel are generated from 5x7 pixel glyphs by the scripts in
-<a href="https://github.com/visrealm/visrealm/tree/main/assets">assets/</a>.
-</sub>
