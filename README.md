@@ -2,27 +2,26 @@
   <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/banner.svg" width="100%" alt="visrealm - Troy Schrapel - retro computing and hardware emulation">
 </p>
 
-I started programming on a TI-99/4A when I was about five, and that got me hooked. I'd moved on to
-the PC and picked up C and C++ well before any of it became a job. The career since has been about
-90% C++.
+I started programming on a TI-99/4A at about five and got hooked. Moved onto the PC, picked up C and
+C++ long before any of it paid, and the career since has been about 90% C++.
 
-I got into building hardware much later. First a breadboard computer, the
-**[vrcpu](https://github.com/visrealm/vrcpu)**, then an emulator for it and a web version. Adding a
-character LCD to the board meant emulating the LCD too, which became
+The hardware came much later. In 2019 I built a breadboard computer, the
+**[vrcpu](https://github.com/visrealm/vrcpu)**, then wrote an emulator for it and a web version.
+Later I added a character LCD to the board, so I had to emulate that too -
 **[vrEmuLcd](https://github.com/visrealm/vrEmuLcd)**.
 
-After that I wanted to build something around a 65C02, which became the
-**[HBC-56](https://github.com/visrealm/hbc-56)**. Writing its emulator meant writing my own
+Then I decided to move onto a 65C02 project and designed the
+**[HBC-56](https://github.com/visrealm/hbc-56)**. Writing an emulator for that meant writing my own
 **[6502](https://github.com/visrealm/vrEmu6502)** and
-**[TMS9918A](https://github.com/visrealm/vrEmuTms9918)** libraries first, again for desktop and
-web. Once those existed, the **[PICO-56](https://github.com/visrealm/pico-56)** was largely the
-same emulator with hardware glue around it, running on a single Raspberry Pi Pico.
+**[TMS9918A](https://github.com/visrealm/vrEmuTms9918)** libraries, desktop and web again. The
+**[PICO-56](https://github.com/visrealm/pico-56)** reused that emulator code, just with the
+hardware glue, on a single Pico.
 
-Then it occurred to me that emulation good enough to run a whole machine was good enough to replace
-the real chip. That became the **[PICO9918](https://github.com/visrealm/pico9918)**: a drop-in VDP
-replacement powered by an RP2040 or RP2350, with VGA, HDMI or SCART RGB output through swappable
-dongles, and the F18A's enhanced modes. It has been tested on over 30 classic machines, and boards
-are [available from my store](https://lectronz.com/stores/visrealm).
+Then I thought, perhaps I could just make a drop-in TMS9918A. That's the
+**[PICO9918](https://github.com/visrealm/pico9918)** - an RP2040 or RP2350 in place of the real
+chip, VGA, HDMI or SCART RGB out through swappable dongles, and the F18A's enhanced modes. Tested
+on over 30 classic machines so far. Boards are in
+[my store](https://lectronz.com/stores/visrealm).
 
 <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/divider.svg" width="100%" alt="">
 
