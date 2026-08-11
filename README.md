@@ -39,7 +39,6 @@ WebAssembly build without dragging a framework along.
 | **[vrEmu6502](https://github.com/visrealm/vrEmu6502)** | 6502, 65C02, R65C02, WDC65C02 and 6510 variants | [![](https://img.shields.io/github/stars/visrealm/vrEmu6502?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmu6502/stargazers) |
 | **[vrEmuLcd](https://github.com/visrealm/vrEmuLcd)** | HD44780 character LCD, C99 engine with a JavaScript front-end | [![](https://img.shields.io/github/stars/visrealm/vrEmuLcd?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmuLcd/stargazers) |
 | **[vrEmu6522](https://github.com/visrealm/vrEmu6522)** | 6522/65C22 VIA - timers, shift register, handshaking | [![](https://img.shields.io/github/stars/visrealm/vrEmu6522?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmu6522/stargazers) |
-| **[thumb9900](https://github.com/visrealm/thumb9900)** | TMS9900 emulation written in ARM Thumb assembly, for the PICO9918's F18A GPU | [![](https://img.shields.io/github/stars/visrealm/thumb9900?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/thumb9900/stargazers) |
 
 ## Retro software
 
