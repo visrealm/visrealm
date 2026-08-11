@@ -2,19 +2,21 @@
   <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/banner.svg" width="100%" alt="visrealm - Troy Schrapel - retro computing and hardware emulation">
 </p>
 
-I build the hardware I grew up with, and emulate the rest.
+I design modern hardware replacements for classic retro machines, and write emulator libraries for
+the chips inside them.
 
-Most of what's here orbits the **TMS9918A** - the video display processor behind the TI-99/4A,
-ColecoVision, MSX, SG-1000, CreatiVision and NABU. I've emulated it in C99, reimplemented it in
-hardware on a Raspberry Pi Pico, and built a homebrew 65C02 computer around it.
+Most of it involves the **TMS9918A**, the video display processor used in the TI-99/4A,
+ColecoVision, MSX, SG-1000, CreatiVision and NABU. I wrote a C99 emulator library for it, then
+reimplemented it in hardware on a Raspberry Pi Pico. I also built a 65C02 homebrew computer that
+uses one.
 
-The **[PICO9918](https://github.com/visrealm/pico9918)** is the one people know: a drop-in
-replacement for that chip, with an RP2040 or RP2350 doing the VDP's job, swappable VGA, SCART RGB
-and HDMI dongles, and the F18A's enhanced modes on top. It's a shipping product, not a demo -
-[you can buy one](https://lectronz.com/stores/visrealm).
+The **[PICO9918](https://github.com/visrealm/pico9918)** is a drop-in replacement for the classic
+VDP, powered by an RP2040 or RP2350. It provides VGA, HDMI or SCART RGB through swappable dongles,
+covers the F18A's enhanced modes, and has been tested on over 30 classic machines. Boards are
+[available from my store](https://lectronz.com/stores/visrealm).
 
-Everything else is 6502, TMS9900, x86 and ARM assembly, C, PCB design, and emulators small enough
-to run in a browser tab.
+The rest is mostly C and assembly (6502, TMS9900, x86, ARM), PCB design, and a few games for
+classic hardware.
 
 <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/divider.svg" width="100%" alt="">
 
@@ -23,31 +25,30 @@ to run in a browser tab.
 | Project | What it does | ★ |
 |---|---|---|
 | **[pico9918](https://github.com/visrealm/pico9918)** | Drop-in TMS9918A/TMS9929A replacement on a Raspberry Pi Pico, with F18A-compatible enhanced modes and VGA, SCART RGB or HDMI output. [Hackaday](https://hackaday.io/project/196478-pico9918) | [![](https://img.shields.io/github/stars/visrealm/pico9918?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/pico9918/stargazers) |
-| **[hbc-56](https://github.com/visrealm/hbc-56)** | Homebrew 65C02 computer on a backplane - TMS9918A video, AY-3-8910 sound, built card by card | [![](https://img.shields.io/github/stars/visrealm/hbc-56?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/hbc-56/stargazers) |
-| **[pico-56](https://github.com/visrealm/pico-56)** | The entire HBC-56 emulated on a single Pico, VGA and audio out | [![](https://img.shields.io/github/stars/visrealm/pico-56?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/pico-56/stargazers) |
-| **[vrcpu](https://github.com/visrealm/vrcpu)** | Ben Eater inspired breadboard CPU, with a [browser emulator](https://cpu.visualrealmsoftware.com) and assembler | [![](https://img.shields.io/github/stars/visrealm/vrcpu?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/vrcpu/stargazers) |
-| **[keyboard4a99](https://github.com/visrealm/keyboard4a99)** | Cherry MX upgrade for the TI-99/4A's Mitsumi mylar keyboard. [Hackaday](https://hackaday.io/project/195508-keyboard4a-99) | [![](https://img.shields.io/github/stars/visrealm/keyboard4a99?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/keyboard4a99/stargazers) |
+| **[hbc-56](https://github.com/visrealm/hbc-56)** | Homebrew 65C02 computer on a backplane, with TMS9918A video and dual AY-3-8910 sound | [![](https://img.shields.io/github/stars/visrealm/hbc-56?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/hbc-56/stargazers) |
+| **[pico-56](https://github.com/visrealm/pico-56)** | The HBC-56 emulated on a single Raspberry Pi Pico, with VGA and audio output | [![](https://img.shields.io/github/stars/visrealm/pico-56?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/pico-56/stargazers) |
+| **[vrcpu](https://github.com/visrealm/vrcpu)** | Ben Eater inspired breadboard computer, with an [emulator](https://cpu.visualrealmsoftware.com) and assembler | [![](https://img.shields.io/github/stars/visrealm/vrcpu?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/vrcpu/stargazers) |
+| **[keyboard4a99](https://github.com/visrealm/keyboard4a99)** | Cherry MX compatible upgrade for the TI-99/4A Mitsumi mylar keyboard. [Hackaday](https://hackaday.io/project/195508-keyboard4a-99) | [![](https://img.shields.io/github/stars/visrealm/keyboard4a99?style=flat-square&label=%E2%98%85&labelColor=05070a&color=21c942)](https://github.com/visrealm/keyboard4a99/stargazers) |
 
 ## Emulation libraries
 
-Small, dependency-free C99 cores. Each one drops into a host program, an Arduino sketch or a
-WebAssembly build without dragging a framework along.
+All C99 with no dependencies. They build for desktop, Arduino and WebAssembly.
 
 | Project | What it does | ★ |
 |---|---|---|
-| **[vrEmuTms9918](https://github.com/visrealm/vrEmuTms9918)** | TMS9918A/9928A/9929A VDP. The core inside the PICO9918. [Hackaday](https://hackaday.io/project/183849-tms9918-emulator-library) | [![](https://img.shields.io/github/stars/visrealm/vrEmuTms9918?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmuTms9918/stargazers) |
-| **[vrEmu6502](https://github.com/visrealm/vrEmu6502)** | 6502, 65C02, R65C02, WDC65C02 and 6510 variants | [![](https://img.shields.io/github/stars/visrealm/vrEmu6502?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmu6502/stargazers) |
-| **[vrEmuLcd](https://github.com/visrealm/vrEmuLcd)** | HD44780 character LCD, C99 engine with a JavaScript front-end | [![](https://img.shields.io/github/stars/visrealm/vrEmuLcd?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmuLcd/stargazers) |
-| **[vrEmu6522](https://github.com/visrealm/vrEmu6522)** | 6522/65C22 VIA - timers, shift register, handshaking | [![](https://img.shields.io/github/stars/visrealm/vrEmu6522?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmu6522/stargazers) |
+| **[vrEmuTms9918](https://github.com/visrealm/vrEmuTms9918)** | TMS9918A/9928A/9929A VDP emulation. Used by the PICO9918. [Hackaday](https://hackaday.io/project/183849-tms9918-emulator-library) | [![](https://img.shields.io/github/stars/visrealm/vrEmuTms9918?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmuTms9918/stargazers) |
+| **[vrEmu6502](https://github.com/visrealm/vrEmu6502)** | 6502, 65C02, R65C02, WDC65C02 and 6510 | [![](https://img.shields.io/github/stars/visrealm/vrEmu6502?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmu6502/stargazers) |
+| **[vrEmuLcd](https://github.com/visrealm/vrEmuLcd)** | HD44780 character LCD, with a C99 engine and a web front-end | [![](https://img.shields.io/github/stars/visrealm/vrEmuLcd?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmuLcd/stargazers) |
+| **[vrEmu6522](https://github.com/visrealm/vrEmu6522)** | 6522/65C22 VIA emulation | [![](https://img.shields.io/github/stars/visrealm/vrEmu6522?style=flat-square&label=%E2%98%85&labelColor=05070a&color=43ebf6)](https://github.com/visrealm/vrEmu6522/stargazers) |
 
 ## Retro software
 
 | Project | What it does | ★ |
 |---|---|---|
-| **[retroplex](https://github.com/visrealm/retroplex)** | Supaplex for retro machines with a PICO9918 fitted | [![](https://img.shields.io/github/stars/visrealm/retroplex?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/retroplex/stargazers) |
+| **[retroplex](https://github.com/visrealm/retroplex)** | A Supaplex clone for retro computers with a PICO9918 | [![](https://img.shields.io/github/stars/visrealm/retroplex?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/retroplex/stargazers) |
 | **[cx16-supaplex](https://github.com/visrealm/cx16-supaplex)** | Supaplex for the Commander X16, in 6502 assembly | [![](https://img.shields.io/github/stars/visrealm/cx16-supaplex?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/cx16-supaplex/stargazers) |
-| **[retropipe](https://github.com/visrealm/retropipe)** | Pipe Dream clone for TMS9918A machines | [![](https://img.shields.io/github/stars/visrealm/retropipe?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/retropipe/stargazers) |
-| **[supaplex-tools](https://github.com/visrealm/supaplex-tools)** | Tools for picking apart the original Supaplex game data | [![](https://img.shields.io/github/stars/visrealm/supaplex-tools?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/supaplex-tools/stargazers) |
+| **[retropipe](https://github.com/visrealm/retropipe)** | A Pipe Dreams clone for retro computers | [![](https://img.shields.io/github/stars/visrealm/retropipe?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/retropipe/stargazers) |
+| **[supaplex-tools](https://github.com/visrealm/supaplex-tools)** | Tools to work with the original Supaplex game code | [![](https://img.shields.io/github/stars/visrealm/supaplex-tools?style=flat-square&label=%E2%98%85&labelColor=05070a&color=c95bba)](https://github.com/visrealm/supaplex-tools/stargazers) |
 
 <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/divider.svg" width="100%" alt="">
 
@@ -93,9 +94,8 @@ WebAssembly build without dragging a framework along.
 <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/divider.svg" width="100%" alt="">
 
 <sub>
-Those 15 colours are the TMS9918A's entire palette, lifted straight out of
+The 15 colours above are the TMS9918A palette, taken from
 <a href="https://github.com/visrealm/vrEmuTms9918/blob/main/src/vrEmuTms9918Util.c">vrEmuTms9918Util.c</a>.
-Every graphic on this page is generated from 5x7 pixel glyphs by
-<a href="https://github.com/visrealm/visrealm/tree/main/assets">assets/</a> - no web fonts, no third-party
-card services.
+The banner and stats panel are generated from 5x7 pixel glyphs by the scripts in
+<a href="https://github.com/visrealm/visrealm/tree/main/assets">assets/</a>.
 </sub>
