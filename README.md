@@ -2,8 +2,9 @@
   <img src="https://raw.githubusercontent.com/visrealm/visrealm/main/assets/banner.svg" width="100%" alt="visrealm - Troy Schrapel - retro computing and hardware emulation">
 </p>
 
-I started programming on a TI-99/4A when I was about five, and that got me hooked. Eventually it
-turned into a career, mostly C and C++ on the PC.
+I started programming on a TI-99/4A when I was about five, and that got me hooked. I'd moved on to
+the PC and picked up C and C++ well before any of it became a job. The career since has been about
+90% C++.
 
 I got into building hardware much later. First a breadboard computer, the
 **[vrcpu](https://github.com/visrealm/vrcpu)**, then an emulator for it and a web version. Adding a
