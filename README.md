@@ -3,10 +3,10 @@
 </p>
 
 I started programming on a TI-99/4A at about five and got hooked. Moved onto the PC, picked up C and
-C++ long before any of it paid, and the career since has been about 90% C++.
+C++ long before any of it paid, and the career since University has been about 90% C++.
 
-The hardware came much later. In 2019 I built a breadboard computer, the
-**[vrcpu](https://github.com/visrealm/vrcpu)**, then wrote an emulator for it and a web version.
+The hardware came much later. In 2019 I built a breadboard computer after watching the Ben Eater SAP-1 series, the
+**[vrcpu](https://github.com/visrealm/vrcpu)**, then wrote an emulator for it in C with a web front-end.
 Later I added a character LCD to the board, so I had to emulate that too -
 **[vrEmuLcd](https://github.com/visrealm/vrEmuLcd)**.
 
@@ -15,9 +15,9 @@ Then I decided to move onto a 65C02 project and designed the
 **[6502](https://github.com/visrealm/vrEmu6502)** and
 **[TMS9918A](https://github.com/visrealm/vrEmuTms9918)** libraries, desktop and web again. The
 **[PICO-56](https://github.com/visrealm/pico-56)** reused that emulator code, just with the
-hardware glue, on a single Pico.
+hardware glue, on a Pi Pico.
 
-Then I thought, perhaps I could just make a drop-in TMS9918A. That's the
+Then I thought, perhaps I could use the same emulator code to make a drop-in TMS9918A. That's the
 **[PICO9918](https://github.com/visrealm/pico9918)** - an RP2040 or RP2350 in place of the real
 chip, VGA, HDMI or SCART RGB out through swappable dongles, and the F18A's enhanced modes. Tested
 on over 30 classic machines so far. Boards are in
