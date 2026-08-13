@@ -37,7 +37,7 @@ on over 30 classic machines so far. Boards are in
 
 ## Emulation libraries
 
-All C99 with no dependencies. They build for desktop, Arduino and WebAssembly.
+All C99 with no dependencies. They build for desktop, WebAssembly and embedded targets. These libraries power my various homebrew computer emulators, the [pico-56](https://github.com/visrealm/pico-56) and of course the [pico9918](https://github.com/visrealm/pico9918).
 
 | Project | What it does | ★ |
 |---|---|---|
