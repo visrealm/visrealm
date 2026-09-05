@@ -42,6 +42,22 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats.svg
-          git commit -m "Refresh stats"
-          git push
+          cp assets/stats.svg "$RUNNER_TEMP/stats.svg"
+          for attempt in 1 2 3 4 5; do
+            git add assets/stats.svg
+            git commit -m "Refresh stats"
+            if git push; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed; resyncing with origin/main"
+            sleep $((attempt * 5))
+            git fetch origin main
+            git reset --hard FETCH_HEAD
+            cp "$RUNNER_TEMP/stats.svg" assets/stats.svg
+            if git diff --quiet -- assets/stats.svg; then
+              echo "origin already has these stats"
+              exit 0
+            fi
+          done
+          echo "push failed after 5 attempts"
+          exit 1
